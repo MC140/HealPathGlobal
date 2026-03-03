@@ -260,7 +260,7 @@
     .section-sub.light { color: rgba(255,255,255,0.6); }
 
     /* fade-in animation */
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     .fade-in-delay-1 { transition-delay: 0.1s; }
     .fade-in-delay-2 { transition-delay: 0.2s; }
@@ -1245,10 +1245,26 @@ window.addEventListener('scroll', () => {
 });
 
 // ── FADE IN OBSERVER ───────────────────────────────────────────────────────
+// Animate elements as they scroll into view
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+}, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  obs.observe(el);
+});
+// Immediately show elements already in viewport on load
+setTimeout(() => {
+  document.querySelectorAll('.fade-in').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+      el.classList.add('visible');
+    }
+  });
+}, 100);
 
 // ── MOBILE MENU ────────────────────────────────────────────────────────────
 document.getElementById('mobile-toggle').addEventListener('click', () => {
