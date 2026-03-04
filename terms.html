@@ -5,113 +5,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service — HealPath Global Concierge Inc.</title>
-  <meta name="description" content="HealPath Global Concierge Inc. Website Terms of Service governing use of healpathglobal.com.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Lato', sans-serif; background: #FFFFFF; color: #1A202C; line-height: 1.8; font-size: 16px; }
 
 ```
-:root {
-  --navy: #0B1F3A;
-  --navy-light: #122848;
-  --gold: #C9A84C;
-  --gold-light: #E8C96A;
-  --white: #FFFFFF;
-  --off-white: #F8F7F4;
-  --grey-light: #F2F4F7;
-  --grey-mid: #E2E6ED;
-  --grey-text: #6B7280;
-  --body-text: #2D3748;
-  --max-w: 800px;
-}
+/* NAV */
+nav { background: #0B1F3A; padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-family: 'Playfair Display', serif; color: #FFFFFF; font-size: 1.2rem; font-weight: 700; text-decoration: none; }
+.nav-brand span { color: #C9A84C; }
+.nav-back { color: #C9A84C; text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.nav-back:hover { color: #E8C96A; }
 
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Lato', sans-serif;
-  background: var(--off-white);
-  color: var(--body-text);
-  line-height: 1.75;
-  font-size: 16px;
-}
-
-nav {
-  background: var(--navy);
-  padding: 18px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-.nav-brand { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.02em; text-decoration: none; }
-.nav-brand span { color: var(--gold); }
-.nav-back { color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
-.nav-back:hover { color: var(--gold-light); }
-
-.hero {
-  background: var(--navy);
-  padding: 64px 40px 56px;
-  text-align: center;
-  border-bottom: 4px solid var(--gold);
-}
-.hero-label { display: inline-block; background: rgba(201,168,76,0.15); border: 1px solid var(--gold); color: var(--gold); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 16px; border-radius: 2px; margin-bottom: 20px; }
-.hero h1 { font-family: 'Playfair Display', serif; color: var(--white); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
-.hero-sub { color: rgba(255,255,255,0.65); font-size: 0.95rem; max-width: 520px; margin: 0 auto 28px; }
+/* HERO - dark top only */
+.hero { background: #0B1F3A; padding: 56px 40px 48px; text-align: center; border-bottom: 4px solid #C9A84C; }
+.hero-badge { display: inline-block; border: 1px solid #C9A84C; color: #C9A84C; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 16px; border-radius: 2px; margin-bottom: 20px; }
+.hero h1 { font-family: 'Playfair Display', serif; color: #FFFFFF; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 14px; }
+.hero-sub { color: rgba(255,255,255,0.80); font-size: 0.95rem; max-width: 500px; margin: 0 auto 28px; }
 .hero-meta { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
-.hero-meta-item { color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 0.05em; }
-.hero-meta-item strong { color: var(--gold); display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
+.hero-meta-item { font-size: 0.82rem; color: rgba(255,255,255,0.75); }
+.hero-meta-item strong { color: #C9A84C; display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
 
-.page-wrap { max-width: var(--max-w); margin: 0 auto; padding: 60px 24px 100px; }
+/* ALL WHITE CONTENT */
+.page-wrap { max-width: 800px; margin: 0 auto; padding: 60px 24px 100px; background: #FFFFFF; }
 
-.section { margin-bottom: 52px; opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
-.section.visible { opacity: 1; transform: translateY(0); }
-.section-number { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-.section h2 { font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gold); }
-.section h3 { font-family: 'Lato', sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-top: 24px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.06em; }
-.section p { color: var(--body-text); margin-bottom: 14px; font-size: 0.97rem; }
+/* TOC */
+.toc { background: #F8F9FA; border: 1px solid #E2E6ED; border-top: 3px solid #0B1F3A; padding: 28px 32px; margin-bottom: 52px; border-radius: 3px; }
+.toc-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: #0B1F3A; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+.toc-list { list-style: none; counter-reset: toc; columns: 2; column-gap: 24px; }
+@media (max-width: 540px) { .toc-list { columns: 1; } }
+.toc-list li { counter-increment: toc; padding: 5px 0; font-size: 0.88rem; }
+.toc-list li::before { content: counter(toc) ". "; color: #C9A84C; font-weight: 700; }
+.toc-list li a { color: #1A202C; text-decoration: none; }
+.toc-list li a:hover { color: #C9A84C; }
 
-.section ul { list-style: none; margin: 12px 0 18px 0; }
-.section ul li { padding: 7px 0 7px 24px; position: relative; font-size: 0.96rem; border-bottom: 1px solid var(--grey-mid); }
+/* SECTIONS */
+.section { margin-bottom: 52px; }
+.sec-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C; margin-bottom: 8px; }
+.section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #0B1F3A; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #C9A84C; }
+.section h3 { font-size: 0.95rem; font-weight: 700; color: #0B1F3A; margin: 24px 0 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+.section p { color: #2D3748; margin-bottom: 14px; font-size: 0.97rem; }
+.section ul { list-style: none; margin: 12px 0 18px; }
+.section ul li { padding: 8px 0 8px 22px; position: relative; font-size: 0.96rem; color: #2D3748; border-bottom: 1px solid #E2E6ED; }
 .section ul li:last-child { border-bottom: none; }
-.section ul li::before { content: ''; position: absolute; left: 0; top: 16px; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+.section ul li::before { content: ''; position: absolute; left: 0; top: 17px; width: 7px; height: 7px; background: #C9A84C; border-radius: 50%; }
 
-.toc { background: var(--white); border: 1px solid var(--grey-mid); border-top: 3px solid var(--navy); padding: 28px 32px; margin-bottom: 52px; border-radius: 3px; }
-.toc-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
-.toc ol { counter-reset: toc; list-style: none; columns: 2; column-gap: 24px; }
-@media (max-width: 540px) { .toc ol { columns: 1; } }
-.toc ol li { counter-increment: toc; padding: 5px 0; font-size: 0.88rem; }
-.toc ol li a { color: var(--body-text); text-decoration: none; transition: color 0.2s; }
-.toc ol li a:hover { color: var(--gold); }
-.toc ol li a::before { content: counter(toc) ". "; color: var(--gold); font-weight: 700; font-size: 0.8rem; }
+/* ALERTS */
+.alert { background: #F2F4F7; border-left: 4px solid #0B1F3A; padding: 16px 20px; border-radius: 2px; margin: 20px 0; font-size: 0.93rem; color: #2D3748; font-style: italic; }
+.alert.warning { background: #FFF8E1; border-left-color: #F59E0B; font-style: normal; }
+.alert.caps { font-style: normal; font-weight: 700; font-size: 0.88rem; color: #0B1F3A; background: #EEF2F7; }
 
-.alert { background: var(--grey-light); border-left: 4px solid var(--navy); padding: 16px 20px; border-radius: 2px; margin: 20px 0; font-size: 0.93rem; color: var(--body-text); font-style: italic; }
-.alert.warning { background: #FFF8E1; border-left-color: #F59E0B; }
-.alert.caps { font-style: normal; font-weight: 700; font-size: 0.88rem; color: var(--navy); letter-spacing: 0.01em; }
-
+/* GRID CARDS */
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
 @media (max-width: 580px) { .info-grid { grid-template-columns: 1fr; } }
-.info-card { background: var(--white); border: 1px solid var(--grey-mid); border-left: 3px solid var(--gold); padding: 14px 16px; border-radius: 3px; }
-.info-card-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-.info-card-value { font-size: 0.93rem; color: var(--navy); }
+.info-card { background: #FFFFFF; border: 1px solid #E2E6ED; border-left: 3px solid #C9A84C; padding: 14px 16px; border-radius: 3px; }
+.info-card-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A84C; margin-bottom: 4px; }
+.info-card-value { font-size: 0.93rem; color: #0B1F3A; font-weight: 600; }
 
-.contact-block { background: var(--navy); padding: 28px 32px; border-radius: 4px; margin-top: 20px; }
-.contact-block p { color: rgba(255,255,255,0.75); margin-bottom: 6px; font-size: 0.93rem; }
-.contact-block a { color: var(--gold); text-decoration: none; }
-.contact-block a:hover { color: var(--gold-light); text-decoration: underline; }
+/* CONTACT BLOCK - dark island */
+.contact-block { background: #0B1F3A; padding: 28px 32px; border-radius: 4px; margin-top: 20px; }
+.contact-block p { color: rgba(255,255,255,0.80); margin-bottom: 8px; font-size: 0.93rem; }
+.contact-block a { color: #C9A84C; text-decoration: none; }
 
-.progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--gold); z-index: 200; width: 0%; transition: width 0.1s linear; }
+/* FOOTER */
+footer { background: #0B1F3A; border-top: 3px solid #C9A84C; padding: 40px; text-align: center; }
+.footer-brand { font-family: 'Playfair Display', serif; color: #FFFFFF; font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+footer p { color: rgba(255,255,255,0.55); font-size: 0.82rem; margin-bottom: 6px; }
+footer a { color: #C9A84C; text-decoration: none; }
 
-footer { background: var(--navy); border-top: 3px solid var(--gold); padding: 40px; text-align: center; }
-footer p { color: rgba(255,255,255,0.45); font-size: 0.82rem; margin-bottom: 6px; }
-footer a { color: var(--gold); text-decoration: none; }
-.footer-brand { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+.progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: #C9A84C; z-index: 200; width: 0%; transition: width 0.1s linear; }
 
-.divider { border: none; border-top: 1px solid var(--grey-mid); margin: 32px 0; }
+@media (max-width: 640px) {
+  nav { padding: 14px 20px; }
+  .hero { padding: 36px 20px 32px; }
+  .page-wrap { padding: 36px 16px 60px; }
+}
 ```
 
   </style>
@@ -121,19 +91,19 @@ footer a { color: var(--gold); text-decoration: none; }
 <div class="progress-bar" id="progress"></div>
 
 <nav>
-  <a href="/" class="nav-brand">HealPath <span>Global</span></a>
+  <a href="main.html" class="nav-brand">HealPath <span>Global</span></a>
   <a href="main.html" class="nav-back">← Back to Website</a>
 </nav>
 
 <div class="hero">
-  <div class="hero-label">Legal Document</div>
+  <div class="hero-badge">Legal Document</div>
   <h1>Terms of Service</h1>
   <p class="hero-sub">Governing your use of healpathglobal.com and HealPath Global's online services</p>
   <div class="hero-meta">
     <div class="hero-meta-item"><strong>Effective Date</strong>March 2026</div>
     <div class="hero-meta-item"><strong>Jurisdiction</strong>Ontario, Canada</div>
     <div class="hero-meta-item"><strong>Applies To</strong>healpathglobal.com</div>
-    <div class="hero-meta-item"><strong>Questions</strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90f3fffee3e5fce4d0fdf5f4f2e2f9f4f7f5bef3f1">[email&#160;protected]</a></div>
+    <div class="hero-meta-item"><strong>Questions</strong>consult@healpathglobal.com</div>
   </div>
 </div>
 
@@ -141,10 +111,10 @@ footer a { color: var(--gold); text-decoration: none; }
 
   <div class="toc">
     <div class="toc-title">Contents</div>
-    <ol>
+    <ul class="toc-list">
       <li><a href="#s1">Acceptance of Terms</a></li>
       <li><a href="#s2">About HealPath Global</a></li>
-      <li><a href="#s3">Permitted and Prohibited Use</a></li>
+      <li><a href="#s3">Use of Website</a></li>
       <li><a href="#s4">No Medical Advice</a></li>
       <li><a href="#s5">Consultation Form</a></li>
       <li><a href="#s6">Intellectual Property</a></li>
@@ -154,135 +124,107 @@ footer a { color: var(--gold); text-decoration: none; }
       <li><a href="#s10">Limitation of Liability</a></li>
       <li><a href="#s11">Indemnification</a></li>
       <li><a href="#s12">Governing Law</a></li>
-      <li><a href="#s13">Severability & Waiver</a></li>
+      <li><a href="#s13">Severability</a></li>
       <li><a href="#s14">Entire Agreement</a></li>
       <li><a href="#s15">Changes to Terms</a></li>
       <li><a href="#s16">Contact</a></li>
-    </ol>
+    </ul>
   </div>
-
-  <!-- 1 -->
 
   <div class="section" id="s1">
-    <div class="section-number">Section 01</div>
+    <div class="sec-num">Section 01</div>
     <h2>Acceptance of Terms</h2>
-    <p>By accessing or using the website located at healpathglobal.com (the "Website"), you ("User," "you") agree to be legally bound by these Terms of Service ("Terms"). If you do not agree to these Terms in their entirety, you must immediately cease using the Website.</p>
-    <p>These Terms apply to all visitors, users, and others who access or use the Website, regardless of whether they subsequently engage HealPath Global's concierge services.</p>
-    <p>HealPath Global Concierge Inc. reserves the right to update these Terms at any time. Continued use of the Website after changes are posted constitutes acceptance of the updated Terms.</p>
+    <p>By accessing or using the website located at healpathglobal.com (the "Website"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use this Website.</p>
+    <p>These Terms apply to all visitors, users, and others who access or use the Website. Your continued use of the Website following the posting of any changes constitutes acceptance of those changes.</p>
+    <div class="alert">These Terms govern use of the Website only. Patients who engage HealPath Global's coordination services will enter into a separate Patient Service Agreement which governs the service relationship.</div>
   </div>
-
-  <!-- 2 -->
 
   <div class="section" id="s2">
-    <div class="section-number">Section 02</div>
+    <div class="sec-num">Section 02</div>
     <h2>About HealPath Global</h2>
-    <p>HealPath Global Concierge Inc. ("HealPath Global," "we," "us") is a corporation registered in Ontario, Canada, providing medical tourism concierge and coordination services. <strong>HealPath Global is not a hospital, clinic, medical facility, or healthcare provider of any kind.</strong></p>
-    <p>All information presented on this Website is provided for general informational purposes only. It does not constitute, and must not be construed as, medical advice. Medical decisions must be made in consultation with qualified, licensed healthcare professionals.</p>
+    <p>HealPath Global Concierge Inc. is an Ontario-registered corporation that provides medical travel coordination and concierge services. HealPath Global helps patients from Canada and the United States access medical care at internationally accredited hospitals in India.</p>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-card-label">Company</div><div class="info-card-value">HealPath Global Concierge Inc.</div></div>
+      <div class="info-card"><div class="info-card-label">Jurisdiction</div><div class="info-card-value">Ontario, Canada</div></div>
+      <div class="info-card"><div class="info-card-label">Service Type</div><div class="info-card-value">Coordination only — not medical care</div></div>
+      <div class="info-card"><div class="info-card-label">Contact</div><div class="info-card-value">consult@healpathglobal.com</div></div>
+    </div>
   </div>
-
-  <!-- 3 -->
 
   <div class="section" id="s3">
-    <div class="section-number">Section 03</div>
-    <h2>Permitted and Prohibited Use</h2>
-    <h3>Permitted Use</h3>
-    <p>You may use the Website for lawful purposes, including to learn about HealPath Global's services, research medical tourism, submit an inquiry, and communicate with HealPath Global about potential or existing service engagements.</p>
-    <h3>Prohibited Use</h3>
-    <p>You must not use the Website to:</p>
+    <div class="sec-num">Section 03</div>
+    <h2>Use of Website</h2>
+    <p>You may use this Website only for lawful purposes and in accordance with these Terms. You agree not to:</p>
     <ul>
-      <li>Violate any applicable federal, provincial, state, or local law or regulation</li>
-      <li>Submit false, misleading, fraudulent, or fabricated information through any Website form</li>
-      <li>Impersonate any person or entity, or misrepresent your affiliation with any party</li>
-      <li>Attempt to gain unauthorized access to any portion of the Website or its systems</li>
-      <li>Deploy automated bots, scrapers, or crawlers to extract information from the Website</li>
-      <li>Transmit malware, viruses, trojans, ransomware, or any other malicious code</li>
-      <li>Use the Website in any manner that could damage, disable, or impair its operation</li>
-      <li>Reproduce, distribute, or sell Website content without HealPath Global's prior written consent</li>
+      <li>Use the Website in any way that violates applicable federal, provincial, or international laws or regulations</li>
+      <li>Transmit any material that is defamatory, offensive, or otherwise objectionable</li>
+      <li>Attempt to gain unauthorised access to any part of the Website or its related systems</li>
+      <li>Use any automated means to access, scrape, or collect data from the Website</li>
+      <li>Impersonate any person or entity or misrepresent your affiliation with any person or entity</li>
+      <li>Submit false, misleading, or fraudulent information through any form on the Website</li>
     </ul>
+    <p>HealPath Global reserves the right to terminate access to the Website for any user who violates these Terms.</p>
   </div>
-
-  <!-- 4 -->
 
   <div class="section" id="s4">
-    <div class="section-number">Section 04</div>
+    <div class="sec-num">Section 04</div>
     <h2>No Medical Advice</h2>
-    <div class="alert warning caps">NOTHING ON THIS WEBSITE CONSTITUTES MEDICAL ADVICE. Information regarding procedures, hospitals, surgeons, costs, recovery timelines, and outcomes is provided for general informational purposes only. You must consult a qualified, licensed physician before making any decision about medical procedures or medical travel.</div>
-    <p>HealPath Global's concierge services do not replace, supplement, or substitute for professional medical judgment. The decision to undergo any medical procedure is solely yours to make in consultation with your physician.</p>
-    <p>HealPath Global strongly recommends that all prospective patients:</p>
-    <ul>
-      <li>Discuss the proposed procedure with their domestic physician before engaging HealPath Global's services</li>
-      <li>Obtain a second medical opinion if the procedure is complex, elective, or carries significant risk</li>
-      <li>Review all surgeon credentials and hospital accreditation materials before making any decision</li>
-      <li>Consult with a legal professional regarding the implications of receiving medical care in a foreign jurisdiction</li>
-    </ul>
+    <div class="alert warning">Important: Nothing on this Website constitutes medical advice, diagnosis, or treatment recommendation of any kind.</div>
+    <p>HealPath Global is a coordination and concierge service. We are not a hospital, clinic, medical provider, or licensed healthcare practitioner. All content on this Website is provided for general informational purposes only.</p>
+    <p>You should always seek the advice of a qualified physician or other qualified health provider with any questions you may have regarding a medical condition, procedure, or treatment. Never disregard professional medical advice or delay in seeking it because of something you have read on this Website.</p>
   </div>
-
-  <!-- 5 -->
 
   <div class="section" id="s5">
-    <div class="section-number">Section 05</div>
+    <div class="sec-num">Section 05</div>
     <h2>Consultation Form and Inquiries</h2>
-    <p>By submitting HealPath Global's online consultation or assessment form, you:</p>
+    <p>This Website includes a consultation intake form through which visitors may submit inquiries. By submitting this form, you acknowledge and agree that:</p>
     <ul>
-      <li>Consent to HealPath Global contacting you by email or telephone within 24 business hours</li>
-      <li>Consent to HealPath Global collecting, storing, and using the information you provide in accordance with our <a href="/privacy" style="color:var(--gold)">Privacy Policy</a></li>
-      <li>Acknowledge that submission does not create a service agreement or any binding obligation between parties</li>
-      <li>Represent that all information you provide is accurate and truthful to the best of your knowledge</li>
-      <li>Understand that HealPath Global may decline to provide services to any prospective patient at its sole discretion</li>
+      <li>Submission of the form does not create a contractual relationship between you and HealPath Global</li>
+      <li>HealPath Global will respond to inquiries within 24 hours during business days but is not obligated to accept any patient engagement</li>
+      <li>Any personal health information submitted through the form will be handled in accordance with HealPath Global's Privacy Policy</li>
+      <li>You are not receiving medical advice by submitting an inquiry or receiving a response</li>
+      <li>HealPath Global may decline to provide services to any prospective patient at its sole discretion</li>
     </ul>
   </div>
 
-  <!-- 6 -->
-
   <div class="section" id="s6">
-    <div class="section-number">Section 06</div>
+    <div class="sec-num">Section 06</div>
     <h2>Intellectual Property</h2>
-    <p>All content on this Website — including text, graphics, logos, design elements, layout, illustrations, and underlying code — is the proprietary property of HealPath Global Concierge Inc. and is protected by applicable Canadian copyright, trademark, and intellectual property law.</p>
-    <p>You are granted a limited, non-exclusive, non-transferable, revocable licence to access and view Website content for your personal, non-commercial use only. This licence does not permit you to copy, reproduce, distribute, sell, or create derivative works from Website content without HealPath Global's prior written consent.</p>
+    <p>All content on this Website — including text, graphics, logos, design elements, layout, and underlying code — is the proprietary property of HealPath Global Concierge Inc. and is protected by applicable Canadian copyright and intellectual property law.</p>
+    <p>You are granted a limited, non-exclusive, non-transferable licence to access and view Website content for your personal, non-commercial use only. You may not copy, reproduce, distribute, or create derivative works from Website content without HealPath Global's prior written consent.</p>
   </div>
-
-  <!-- 7 -->
 
   <div class="section" id="s7">
-    <div class="section-number">Section 07</div>
+    <div class="sec-num">Section 07</div>
     <h2>Third-Party Links and Content</h2>
     <p>The Website may contain links to third-party websites, including the Joint Commission International verification portal, hospital websites, and other external resources. These links are provided solely for your convenience.</p>
-    <p>HealPath Global does not control, endorse, or take responsibility for the content, accuracy, or privacy practices of any third-party website. Your use of third-party sites is at your own risk and subject to the terms of those sites.</p>
+    <p>HealPath Global does not control, endorse, or take responsibility for the content, accuracy, or privacy practices of any third-party website. Your use of third-party sites is at your own risk.</p>
   </div>
-
-  <!-- 8 -->
 
   <div class="section" id="s8">
-    <div class="section-number">Section 08</div>
+    <div class="sec-num">Section 08</div>
     <h2>Privacy</h2>
-    <p>Your use of this Website is subject to HealPath Global's Privacy Policy, which is incorporated into these Terms by reference. By using the Website and submitting any personal information, you consent to the collection, use, and disclosure of your information as described in the Privacy Policy.</p>
-    <p>Read the full Privacy Policy at: <a href="/privacy" style="color:var(--gold); font-weight:700">healpathglobal.com/privacy</a></p>
+    <p>Your use of this Website is subject to HealPath Global's Privacy Policy, incorporated into these Terms by reference. By using the Website and submitting any personal information, you consent to the collection, use, and disclosure of your information as described in the Privacy Policy.</p>
+    <p>Read the full Privacy Policy at: <a href="privacy.html" style="color:#C9A84C; font-weight:700;">healpathglobal.com/privacy</a></p>
   </div>
 
-  <!-- 9 -->
-
   <div class="section" id="s9">
-    <div class="section-number">Section 09</div>
+    <div class="sec-num">Section 09</div>
     <h2>Disclaimer of Warranties</h2>
     <div class="alert caps">THE WEBSITE AND ALL CONTENT ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT ANY WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.</div>
     <p>HealPath Global does not warrant that the Website will be available continuously, error-free, or free from viruses or harmful components, or that information on the Website is accurate, complete, or current.</p>
-    <p>HealPath Global disclaims all representations and warranties to the fullest extent permitted by the laws of Ontario and Canada.</p>
   </div>
 
-  <!-- 10 -->
-
   <div class="section" id="s10">
-    <div class="section-number">Section 10</div>
+    <div class="sec-num">Section 10</div>
     <h2>Limitation of Liability</h2>
-    <div class="alert caps">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, MEDBRIDGE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF, OR INABILITY TO USE, THE WEBSITE.</div>
+    <div class="alert caps">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HEALPATHGLOBAL SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF, OR INABILITY TO USE, THE WEBSITE.</div>
     <p>HealPath Global's aggregate maximum liability for any claim arising from your use of this Website (excluding claims under a signed Patient Service Agreement) shall not exceed <strong>one hundred Canadian dollars (CAD $100.00)</strong>.</p>
     <div class="alert">Note: The above limitations do not affect obligations HealPath Global assumes under a signed Patient Service Agreement, which is governed by separate terms.</div>
   </div>
 
-  <!-- 11 -->
-
   <div class="section" id="s11">
-    <div class="section-number">Section 11</div>
+    <div class="sec-num">Section 11</div>
     <h2>Indemnification</h2>
     <p>You agree to defend, indemnify, and hold harmless HealPath Global Concierge Inc. and its directors, officers, employees, and agents from any claims, damages, losses, and expenses (including reasonable legal fees) arising from:</p>
     <ul>
@@ -293,58 +235,46 @@ footer a { color: var(--gold); text-decoration: none; }
     </ul>
   </div>
 
-  <!-- 12 -->
-
   <div class="section" id="s12">
-    <div class="section-number">Section 12</div>
+    <div class="sec-num">Section 12</div>
     <h2>Governing Law and Dispute Resolution</h2>
-    <p>These Terms are governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict of law principles.</p>
-    <p>Disputes that cannot be resolved by good-faith negotiation within 30 days shall be submitted to binding arbitration administered by the <strong>ADR Institute of Ontario</strong> in accordance with its National Arbitration Rules. The seat of arbitration shall be Toronto, Ontario. The language of arbitration shall be English.</p>
-    <p>HealPath Global reserves the right to seek injunctive or other equitable relief in any court of competent jurisdiction to protect its intellectual property or confidential information.</p>
+    <p>These Terms are governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada, without regard to conflict of law principles.</p>
+    <p>Disputes that cannot be resolved by good-faith negotiation within 30 days shall be submitted to binding arbitration administered by the <strong>ADR Institute of Ontario</strong>. The seat of arbitration shall be Toronto, Ontario.</p>
     <div class="info-grid">
       <div class="info-card"><div class="info-card-label">Governing Law</div><div class="info-card-value">Province of Ontario, Canada</div></div>
       <div class="info-card"><div class="info-card-label">Arbitration Body</div><div class="info-card-value">ADR Institute of Ontario</div></div>
-      <div class="info-card"><div class="info-card-label">Seat of Arbitration</div><div class="info-card-value">Toronto, Ontario</div></div>
+      <div class="info-card"><div class="info-card-label">Seat</div><div class="info-card-value">Toronto, Ontario</div></div>
       <div class="info-card"><div class="info-card-label">Language</div><div class="info-card-value">English</div></div>
     </div>
   </div>
 
-  <!-- 13 -->
-
   <div class="section" id="s13">
-    <div class="section-number">Section 13</div>
+    <div class="sec-num">Section 13</div>
     <h2>Severability and Waiver</h2>
     <p>If any provision of these Terms is found to be invalid or unenforceable, that provision shall be modified to the minimum extent necessary or severed, and the remaining provisions shall continue in full force and effect.</p>
     <p>HealPath Global's failure to enforce any right under these Terms shall not constitute a waiver of that right or any subsequent breach.</p>
   </div>
 
-  <!-- 14 -->
-
   <div class="section" id="s14">
-    <div class="section-number">Section 14</div>
+    <div class="sec-num">Section 14</div>
     <h2>Entire Agreement</h2>
-    <p>These Terms, together with HealPath Global's Privacy Policy, constitute the entire agreement between you and HealPath Global with respect to your use of the Website. They supersede all prior and contemporaneous understandings regarding Website use.</p>
-    <p>For patients who execute a Patient Service Agreement, the Service Agreement and its schedules govern the service relationship and take precedence over these Terms in the event of any conflict.</p>
+    <p>These Terms, together with HealPath Global's Privacy Policy, constitute the entire agreement between you and HealPath Global with respect to your use of the Website. For patients who execute a Patient Service Agreement, the Service Agreement takes precedence over these Terms in the event of any conflict.</p>
   </div>
-
-  <!-- 15 -->
 
   <div class="section" id="s15">
-    <div class="section-number">Section 15</div>
+    <div class="sec-num">Section 15</div>
     <h2>Changes to These Terms</h2>
-    <p>HealPath Global may update these Terms periodically. Updated Terms will be posted on this page with a revised effective date. Continued use of the Website after changes are posted constitutes your acceptance of the updated Terms. If you do not agree to the revised Terms, you must stop using the Website.</p>
+    <p>HealPath Global may update these Terms periodically. Updated Terms will be posted on this page with a revised effective date. Continued use of the Website after changes are posted constitutes your acceptance of the updated Terms.</p>
   </div>
 
-  <!-- 16 -->
-
   <div class="section" id="s16">
-    <div class="section-number">Section 16</div>
+    <div class="sec-num">Section 16</div>
     <h2>Contact</h2>
     <p>For questions about these Terms of Service:</p>
     <div class="contact-block">
-      <p><strong style="color:white">HealPath Global Concierge Inc.</strong></p>
-      <p>General Inquiries: <a href="/cdn-cgi/l/email-protection#20434f4e53554c54604d45444252494447450e4341"><span class="__cf_email__" data-cfemail="5f3c30312c2a332b1f323a3b3d2d363b383a713c3e">[email&#160;protected]</span></a></p>
-      <p>Privacy Questions: <a href="/cdn-cgi/l/email-protection#1060627966717369507d75747262797477753e7371"><span class="__cf_email__" data-cfemail="6212100b1403011b220f070600100b0605074c0103">[email&#160;protected]</span></a></p>
+      <p><strong style="color:#FFFFFF; font-size:1rem;">HealPath Global Concierge Inc.</strong></p>
+      <p>General Inquiries: <a href="mailto:consult@healpathglobal.com">consult@healpathglobal.com</a></p>
+      <p>Privacy Questions: <a href="mailto:consult@healpathglobal.com">consult@healpathglobal.com</a></p>
       <p>Website: <a href="https://healpathglobal.com">healpathglobal.com</a></p>
       <p>Toronto, Ontario, Canada</p>
     </div>
@@ -356,5 +286,19 @@ footer a { color: var(--gold); text-decoration: none; }
   <div class="footer-brand">HealPath Global Concierge Inc.</div>
   <p>HealPath Global is not a medical provider. Coordination services only.</p>
   <p>Governed by the laws of the Province of Ontario, Canada.</p>
-  <p style="margin-top:16px"><a href="/privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="/">healpathglobal.com</a> &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection#03606c6d70766f77436e666761716a6764662d6062"><span class="__cf_email__" data-cfemail="afccc0c1dcdac3dbefc2cacbcdddc6cbc8ca81ccce">[email&#160;protected]</span></a></p>
-</foote
+  <p style="margin-top:16px;">
+    <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="main.html">Back to Website</a> &nbsp;|&nbsp;
+    <a href="mailto:consult@healpathglobal.com">consult@healpathglobal.com</a>
+  </p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const scrolled = document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+    document.getElementById('progress').style.width = scrolled + '%';
+  });
+</script>
+
+</body>
+</html>
