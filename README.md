@@ -1,2 +1,2 @@
-# MedBridge
-MedBridge
+# HealPath Global
+HealPath Global
