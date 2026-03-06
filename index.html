@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HealPath Global Concierge</title>
+  <title>HealPath Global — Before You Continue</title>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,25 +18,13 @@
       justify-content: center;
       padding: 20px;
     }
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background:
-        radial-gradient(ellipse 70% 70% at 20% 50%, rgba(201,168,76,0.06), transparent),
-        radial-gradient(ellipse 50% 50% at 80% 80%, rgba(201,168,76,0.04), transparent);
-      pointer-events: none;
-    }
     .card {
       background: #fff;
-      width: 100%; max-width: 460px;
-      border-radius: 6px; overflow: hidden;
+      width: 100%;
+      max-width: 460px;
+      border-radius: 6px;
+      overflow: hidden;
       box-shadow: 0 32px 80px rgba(0,0,0,0.5);
-      animation: rise 0.45s cubic-bezier(0.22,1,0.36,1);
-      position: relative; z-index: 1;
-    }
-    @keyframes rise {
-      from { opacity:0; transform:translateY(28px) scale(0.97); }
-      to   { opacity:1; transform:translateY(0) scale(1); }
     }
     .card-head {
       background: #0B1F3A;
@@ -47,134 +33,155 @@
     }
     .logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #fff; margin-bottom: 14px; display: block; }
     .logo span { color: #C9A84C; }
-    .card-head h2 { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.15rem; font-weight: 700; line-height: 1.35; }
-    .card-head p { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 6px; line-height: 1.5; }
+    .card-head h2 { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.15rem; font-weight: 700; }
+    .card-head p { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 6px; }
     .card-body { padding: 24px 32px 28px; }
-    .consent-row {
-      display: flex; gap: 12px; align-items: flex-start;
-      background: #F9F8F5; border: 1px solid #E2E6ED;
-      border-left: 3px solid #0B1F3A; border-radius: 3px;
-      padding: 16px; margin-bottom: 20px; cursor: pointer;
-      transition: border-color 0.2s;
-    }
-    .consent-row:hover { border-color: #C9A84C; border-left-color: #C9A84C; }
-    .consent-row.error { border-color: #C0392B; border-left-color: #C0392B; background: #FEF2F2; }
-    .consent-row input[type="checkbox"] { width: 22px; height: 22px; min-width: 22px; flex-shrink: 0; accent-color: #0B1F3A; cursor: pointer; }
-    .consent-row label { font-size: 0.85rem; line-height: 1.6; color: #2D3748; cursor: pointer; display: block; width: 100%; }
-    .consent-row label a { color: #0B1F3A; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
-    .consent-row label a:hover { color: #C9A84C; }
-    .error-msg { display: none; font-size: 0.78rem; color: #C0392B; font-weight: 700; margin: -12px 0 14px 2px; }
-    .error-msg.show { display: block; }
-    .btn {
-      width: 100%; background: #0B1F3A; color: #fff; border: none;
-      padding: 14px; font-family: 'Lato', sans-serif;
-      font-weight: 900; font-size: 0.85rem; letter-spacing: 0.12em;
-      text-transform: uppercase; border-radius: 3px; cursor: pointer;
-      transition: background 0.2s; position: relative;
-    }
-    .btn:hover { background: #122848; }
-    .btn.loading { pointer-events: none; }
-    .btn .label { transition: opacity 0.2s; }
-    .btn .spinner { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; }
-    .btn.loading .label { opacity: 0; }
-    .btn.loading .spinner { display: flex; }
-    .spin { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .fine-print { text-align: center; margin-top: 14px; font-size: 0.72rem; color: #9CA3AF; line-height: 1.55; }
-    .fine-print a { color: #9CA3AF; text-decoration: underline; }
-    .success { display: none; text-align: center; padding: 40px 32px; }
-    .success-icon { width: 52px; height: 52px; background: #E8F5E9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.3rem; animation: pop 0.35s cubic-bezier(0.22,1,0.36,1); }
-    @keyframes pop { from{transform:scale(0)} to{transform:scale(1)} }
-    .success h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #0B1F3A; margin-bottom: 8px; }
-    .success p { font-size: 0.85rem; color: #6B7280; line-height: 1.6; }
-    .success-btn { display: inline-block; margin-top: 22px; background: #C9A84C; color: #0B1F3A; padding: 13px 32px; font-family: 'Lato', sans-serif; font-weight: 900; font-size: 0.83rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 3px; border: none; cursor: pointer; transition: background 0.2s; }
-    .success-btn:hover { background: #E2C06A; }
+
+```
+/* CHECKBOX ROW — entire area is a label so fully clickable */
+.consent-label {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #F9F8F5;
+  border: 1px solid #E2E6ED;
+  border-left: 3px solid #0B1F3A;
+  border-radius: 3px;
+  padding: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  user-select: none;
+}
+.consent-label:hover { border-color: #C9A84C; border-left-color: #C9A84C; }
+.consent-label.error { border-color: #C0392B; border-left-color: #C0392B; background: #FEF2F2; }
+.consent-label input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: #0B1F3A;
+  cursor: pointer;
+}
+.consent-text { font-size: 0.85rem; line-height: 1.65; color: #2D3748; }
+.consent-text a { color: #0B1F3A; font-weight: 700; text-decoration: underline; }
+.consent-text a:hover { color: #C9A84C; }
+
+.error-msg { display: none; font-size: 0.78rem; color: #C0392B; font-weight: 700; margin: -12px 0 14px 2px; }
+.error-msg.show { display: block; }
+
+.btn {
+  width: 100%;
+  background: #0B1F3A;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover { background: #122848; }
+.btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.fine-print { text-align: center; margin-top: 14px; font-size: 0.72rem; color: #9CA3AF; line-height: 1.55; }
+```
+
   </style>
 </head>
 <body>
 <div class="card" id="card">
-  <div id="consent-screen">
-    <div class="card-head">
-      <span class="logo">HealPath <span>Global</span></span>
-      <h2>Before You Continue</h2>
-      <p>HealPath Global Concierge Inc. — Ontario, Canada</p>
-    </div>
-    <div class="card-body">
-      <div class="consent-row" id="consent-row">
-        <input type="checkbox" id="cb" onchange="document.getElementById('consent-row').classList.remove('error')">
-        <label for="cb">
-          By continuing, I confirm I have read and agree to the
-          <a href="privacy.html" target="_blank" onclick="event.stopPropagation()">Privacy Policy</a>
-          and
-          <a href="terms.html" target="_blank" onclick="event.stopPropagation()">Terms of Service</a>,
-          and I understand that HealPath Global is not a medical provider and does not give medical advice.
-        </label>
-      </div>
-      <div class="error-msg" id="error-msg">Please check the box to continue.</div>
-      <button class="btn" id="btn" onclick="handleConsent()">
-        <span class="label">Continue to HealPath Global</span>
-        <span class="spinner"><div class="spin"></div></span>
-      </button>
-      <p class="fine-print">
-        HealPath Global Concierge Inc. · Toronto, Ontario, Canada<br>
-        Not a medical provider. Coordination services only.
-      </p>
-    </div>
+  <div class="card-head">
+    <span class="logo">HealPath <span>Global</span></span>
+    <h2>Before You Continue</h2>
+    <p>HealPath Global Concierge Inc. — Ontario, Canada</p>
   </div>
-  <div class="success" id="success-screen">
-    <div class="success-icon">✓</div>
-    <h3>You're All Set</h3>
-    <p>Your acknowledgment has been recorded.<br>Welcome to HealPath Global.</p>
-    <button class="success-btn" onclick="window.location.href='main.html'">Enter Website →</button>
+  <div class="card-body">
+
+```
+<!-- Entire row is a <label> — clicking anywhere checks the box -->
+<label class="consent-label" id="consent-label">
+  <input type="checkbox" id="cb">
+  <span class="consent-text">
+    By continuing, I confirm I have read and agree to the
+    <a href="privacy.html" target="_blank" onclick="event.stopPropagation()">Privacy Policy</a>
+    and
+    <a href="terms.html" target="_blank" onclick="event.stopPropagation()">Terms of Service</a>,
+    and I understand that HealPath Global is not a medical provider and does not give medical advice.
+  </span>
+</label>
+
+<div class="error-msg" id="error-msg">Please check the box to continue.</div>
+
+<button class="btn" id="btn" onclick="goToSite()">
+  Continue to HealPath Global
+</button>
+
+<p class="fine-print">
+  HealPath Global Concierge Inc. · Toronto, Ontario, Canada<br>
+  Not a medical provider. Coordination services only.
+</p>
+```
+
   </div>
 </div>
+
 <script>
-  function handleConsent() {
-    const cb = document.getElementById('cb');
+  function goToSite() {
+    var cb = document.getElementById('cb');
+    var label = document.getElementById('consent-label');
+    var errorMsg = document.getElementById('error-msg');
+    var btn = document.getElementById('btn');
+
+    // Not checked — show error and stop
     if (!cb.checked) {
-      document.getElementById('consent-row').classList.add('error');
-      document.getElementById('error-msg').classList.add('show');
+      label.classList.add('error');
+      errorMsg.classList.add('show');
       return;
     }
+
+    // Checked — disable button and go
+    btn.disabled = true;
+    btn.textContent = 'Loading...';
+
     // Save consent
-    localStorage.setItem('medbridge_consented', 'true');
+    localStorage.setItem('hpg_consented', 'true');
 
-```
-const btn = document.getElementById('btn');
-btn.classList.add('loading');
+    // Email notification (24hr cooldown)
+    try {
+      var lastEmail = localStorage.getItem('hpg_last_email');
+      var now = Date.now();
+      if (!lastEmail || (now - parseInt(lastEmail)) > 86400000) {
+        emailjs.init('AJAz9caMIq_GvCjla');
+        emailjs.send('service_b2gdl8s', 'template_x5mkqvo', {
+          timestamp: new Date().toLocaleString(),
+          page: window.location.href
+        });
+        localStorage.setItem('hpg_last_email', now.toString());
+      }
+    } catch(e) {}
 
-// Email notification with 24hr cooldown
-const lastEmail = localStorage.getItem('mb_last_email');
-const now = Date.now();
-if (!lastEmail || (now - parseInt(lastEmail)) > 86400000) {
-  const timestamp = new Date().toLocaleString('en-CA', {
-    year:'numeric', month:'long', day:'numeric',
-    hour:'2-digit', minute:'2-digit', second:'2-digit',
-    timeZoneName:'short'
+    // Navigate to main site
+    setTimeout(function() {
+      window.location.href = 'main.html';
+    }, 500);
+  }
+
+  // Remove error styling when checkbox is clicked
+  document.getElementById('cb').addEventListener('change', function() {
+    document.getElementById('consent-label').classList.remove('error');
+    document.getElementById('error-msg').classList.remove('show');
   });
-  try {
-    emailjs.init('AJAz9caMIq_GvCjla');
-    emailjs.send('service_b2gdl8s', 'template_x5mkqvo', {
-      timestamp: timestamp,
-      page: window.location.href
-    }).catch(() => {});
-  } catch(e) {}
-  localStorage.setItem('mb_last_email', now.toString());
-}
 
-// Go directly to main site after short delay
-setTimeout(() => {
-  window.location.href = 'main.html';
-}, 600);
-```
-
-}
-window.addEventListener(‘DOMContentLoaded’, () => {
-const isServer = location.protocol === ‘https:’ || location.protocol === ‘http:’;
-if (isServer && localStorage.getItem(‘medbridge_consented’) === ‘true’) {
-window.location.href = ‘main.html’;
-}
-});
+  // Skip gate if already consented
+  if (localStorage.getItem('hpg_consented') === 'true') {
+    window.location.href = 'main.html';
+  }
 </script>
 
 </body>
